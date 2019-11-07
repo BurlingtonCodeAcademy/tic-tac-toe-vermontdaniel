@@ -20,35 +20,23 @@ let cell6 = document.getElementById('cell-6');
 let cell7 = document.getElementById('cell-7');
 let cell8 = document.getElementById('cell-8');
 
-//Column One -----------------------------------
-//let column0 = document.getElementById('column-0');
-//    cell0;
-//    cell3;
-//    cell6;
-
-//Column Two -----------------------------------
-//let column1 = document.getElementById('column-1');
-//    cell1;
-//    cell4;
-//    cell8;
-
-//Column Three ---------------------------------
-//let column2 = document.getElementById('column-2');
-//    cell2;
-//    cell5;
-//    cell8;
-
-//Diagonal One ---------------------------------
-//let diagonal0 = document.getElementById('diagonal-0');
-//    cell0;
-//    cell4;
-//    cell8;
-
-//Diagonal Two ----------------------------------
-//let diagonal1 = document.getElementById('diagonal-1');
-//    cell2;
-//    cell4;
-//    cell6;
+let wins =
+//Row One 
+[[cell0, cell1, cell2],
+//Row Two
+[cell3, cell4, cell5], 
+//Row Three
+[cell6, cell7, cell8], 
+//Column One
+[cell0, cell3, cell6], 
+//Column Two
+[cell1, cell4, cell7], 
+//Column Three
+[cell2, cell5, cell8],
+//Diagonal One
+[cell0, cell4, cell8],
+//Diagonal Two
+[cell2, cell4, cell6]]
 
 
 startButton.addEventListener('click', () => {
@@ -68,6 +56,10 @@ cell0.addEventListener('click', () => {
         cell0.textContent = 'O';
         status.textContent = 'Player X\'s turn';
     }
+    if (wins[0] === ['X'] || wins[3] === ['X', 'X', 'X'] || wins[6] === ['X', 'X', 'X']) {
+        alert ('Congradulations! Player X has won!')
+        return;
+    }
 })
 
 cell1.addEventListener('click', () => {
@@ -81,7 +73,8 @@ cell1.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell1.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
+        }
+    })
 
 cell2.addEventListener('click', () => {
     if (cell2.textContent === 'X' || cell2.textContent === 'O') {
@@ -94,7 +87,8 @@ cell2.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell2.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
+        }
+    })
 
 cell3.addEventListener('click', () => {
     if (cell3.textContent === 'X' || cell3.textContent === 'O') {
@@ -107,7 +101,8 @@ cell3.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell3.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
+        }
+    })
 
 cell4.addEventListener('click', () => {
     if (cell4.textContent === 'X' || cell4.textContent === 'O') {
@@ -120,7 +115,8 @@ cell4.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell4.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
+        }
+    })
 
 cell5.addEventListener('click', () => {
     if (cell5.textContent === 'X' || cell5.textContent === 'O') {
@@ -133,7 +129,8 @@ cell5.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell5.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
+        }
+    })
 
 cell6.addEventListener('click', () => {
     if (cell6.textContent === 'X' || cell6.textContent === 'O') {
@@ -146,7 +143,8 @@ cell6.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell6.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
+        }
+    })
 
 cell7.addEventListener('click', () => {
     if (cell7.textContent === 'X' || cell7.textContent === 'O') {
@@ -159,7 +157,8 @@ cell7.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell7.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
+        }
+    })
 
 cell8.addEventListener('click', () => {
     if (cell8.textContent === 'X' || cell8.textContent === 'O') {
@@ -172,6 +171,6 @@ cell8.addEventListener('click', () => {
         } else if (status.textContent === 'Player O\'s turn') {
             cell8.textContent = 'O';
             status.textContent = 'Player X\'s turn';
-        }})
-
+        }
+    })
 
