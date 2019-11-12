@@ -35,8 +35,21 @@ describe("Tic Tac Toe", () => {
     })
 
     it('the status area should say whose turn it is', ()=>{
-      cy.get('.status').contains("Player X's turn")
+      cy.get('#status').contains("Player X's turn")
     })
+  })
+
+  describe('When X selects cell', () => {
+    it('the cell is clickable', () => {
+      cy.get('#cell-0').should('be.clickable')
+    })
+
+    it('redraws the cell', () => {
+      cy.get('#cell-0')
+      .click()
+      .contains('x')
+    })
+
   })
 
 })
